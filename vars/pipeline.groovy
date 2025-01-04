@@ -38,14 +38,14 @@ def validateAppRunning() {
         error("The app did not start correctly!")
     }
 }
-// def stopSpringBootApp() {
-//     echo 'Gracefully stopping the Spring Boot application...'
-//     sh 'mvn spring-boot:stop'
-// }
-// def cleanupProcesses() {
-//     echo 'Cleaning up processes...'
-//     sh 'pkill -f "mvn spring-boot:run" || true'
-// }
+def stopSpringBootApp() {
+    echo 'Gracefully stopping the Spring Boot application...'
+    sh 'mvn spring-boot:stop'
+}
+def cleanupProcesses() {
+    echo 'Cleaning up processes...'
+    sh 'pkill -f "mvn spring-boot:run" || true'
+}
 
 def cleanupWorkspace() {
     echo 'Cleaning up the workspace...'
