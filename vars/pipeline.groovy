@@ -20,11 +20,6 @@ def build_project() {
     sh 'mvn clean package'
 }
 
-def upload_artifact(String artifactPath) {
-    echo 'Uploading artifact...'
-    archiveArtifacts artifacts: artifactPath, allowEmptyArchive: true
-}
-
 def run_application() {
     echo 'Running Spring Boot application...'
     sh 'nohup mvn spring-boot:run &'
